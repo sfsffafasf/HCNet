@@ -1,0 +1,19 @@
+ # model
+    S_model = get_model(cfg)
+    device_ids = [0, 1, 2]
+    S_model = torch.nn.DataParallel(S_model, device_ids=device_ids)
+    S_model = S_model.cuda(device=device_ids[1])
+
+    # device = torch.device(f'cuda:{args.cuda}')
+    # S_model.to(device)
+
+    # T_model = restart().to(device)
+    T_model = restart().cuda(device=device_ids[1])
+    T_Weight = "/media/user/shuju/zh/CVPR2021_PDNet-main/run/2022-07-05-21-41(mirrorrgbd-new_year_convnext_128_5)/model.pth"
+    T_model.load_state_dict(torch.load(T_Weight, map_location={'cuda:0': 'cuda:1'}))
+    for p in T_model.parameters():
+        p.stop_gradient = True
+    T_model.eval()
+    # T_train_logits = teacher_predict(model=T_model, loader=train_loader, inputs="rgbd", loca=T_Weight)
+    total_params = sum(p.numel() for p in S_model.parameters())
+    print("S_model have " + f'{total_params:,} total parameters.')
