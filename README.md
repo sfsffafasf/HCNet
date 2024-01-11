@@ -1,8 +1,3 @@
 # HCNet
-
-# our pretained-pth will be published in baidu[link]
-
-| 一个普通标题 | 一个普通标题 | 一个普通标题 |
-| ------ | ------ | ------ |
-| 短文本 | 中等文本 | 稍微长一点的文本 |
-| 稍微长一点的文本 | 短文本 | 中等文本 |
+# our pretained-pth will be published in baidu：https://pan.baidu.com/s/1tcvxuZtazCZ9eXOZd19BDA 提取码：yckq
+# All the training weights of our model will be saved in the:Baidu: https://pan.baidu.com/s/13FeF2hgFtm6SrsEkhnT-lQ?pwd=dsy6 提取码：dsy6
